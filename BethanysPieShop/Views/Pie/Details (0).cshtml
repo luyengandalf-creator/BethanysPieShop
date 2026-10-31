@@ -1,0 +1,38 @@
+﻿@model BethanyPieShop.Models.Pie
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Bethany's Pie Shop</title>
+</head>
+<body>
+    <h1>Pie Details</h1>
+
+    <a href="/Pie/List">Back to List</a>
+
+    <h2>@Model.Name</h2>
+    @if (!string.IsNullOrEmpty(Model.ShortDescription))
+    {
+        <p>@Model.ShortDescription</p>
+    }
+    @if (!string.IsNullOrEmpty(Model.LongDescription))
+    {
+        <p>@Model.LongDescription</p>
+    }
+    <p>Price: @Model.Price.ToString("c")</p>
+    @if (Model.IsPieOfTheWeek)
+    {
+        <p><strong>Pie of the Week!</strong></p>
+    }
+    @if (Model.InStock)
+    {
+        <p><strong>In Stock</strong></p>
+    }
+    else
+    {
+        <p><strong>Out of Stock</strong></p>
+    }
+    <img src="@Model.ImageUrl" alt="@Model.Name" width="300"/>
+</body>
+</html>

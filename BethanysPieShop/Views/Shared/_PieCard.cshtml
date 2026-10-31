@@ -1,0 +1,53 @@
+﻿@model Pie
+<div class="col">
+    <div class="card pie-card h-100 position-relative">
+        @if (!string.IsNullOrWhiteSpace(Model.ImageThumbnailUrl))
+        {
+            <a asp-controller="Pie"
+               asp-action="Details"
+               asp-route-id="@Model.PieId"
+               title="@Model.Name">
+                <img src="@Model.ImageThumbnailUrl"
+                     class="card-img-top"
+                     alt="@Model.Name"
+                     loading="lazy"
+                     decoding="async" />
+            </a>
+        }
+        else
+        {
+            <a asp-controller="Pie"
+               asp-action="Details"
+               asp-route-id="@Model.PieId"
+               title="@Model.Name"
+               I
+               class="d-flex align-items-center justify-content-center bg-light"
+               style='' height:200px;">
+                <span class="text-muted">No image</span>
+            </a>
+        }
+            <div class="card-body pie-button d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mt-2">
+                    <h2 class="h5 text-start mb-0">
+                        <a asp-controller="Pie"
+                           asp-action="Details"
+                           asp-route-id="@Model.PieId"
+                           class="pie-link stretched-link">
+                            @Model.Name
+                        </a>
+                    </h2>
+                    <h5 class="text-nowrap mb-0">
+                        @Model.Price.ToString("c")
+                    </h5>
+                </div>
+                @if (!string.IsNullOrWhiteSpace(Model.ShortDescription))
+                {
+                    <p class="text-muted mt-2 mb-0">@Model.ShortDescription</p>
+                }
+            </div>
+            <a class="btn btn-secondary"
+               asp-controller="ShoppingCart"
+               asp-action="AddToShoppingCart"
+               asp-route-pieid="@Model.PieId"> + Add to cart</a>
+        </div>
+</div>

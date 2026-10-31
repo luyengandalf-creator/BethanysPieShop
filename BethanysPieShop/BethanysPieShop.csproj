@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Areas\Identity\Pages\Account\Manage\**" />
+    <Content Remove="Areas\Identity\Pages\Account\Manage\**" />
+    <EmbeddedResource Remove="Areas\Identity\Pages\Account\Manage\**" />
+    <None Remove="Areas\Identity\Pages\Account\Manage\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\AppDbContext - Copy.cs" />
+    <Compile Remove="Models\DbSet.cs" />
+    <Compile Remove="Models\ErrorViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Areas\Identity\Pages\_ViewStart.cshtml" />
+    <Content Remove="Views\Pie\Details %280%29.cshtml" />
+    <Content Remove="Views\Pie\Details - Copy %282%29.cshtml" />
+    <Content Remove="Views\Pie\Details - Copy.cshtml" />
+    <Content Remove="Views\Pie\List %280%29.cshtml" />
+    <Content Remove="Views\Pie\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TagHelpers\" />
+    <Folder Include="Views\Contact\" />
+    <Folder Include="Views\About\" />
+    <Folder Include="Views\Shared\Components\CategoryMenu\" />
+    <Folder Include="Views\Shared\Components\ShoppingCartSummary\" />
+    <Folder Include="Views\ShoppingCart\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.32" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.32" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.32" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.32" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.32">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.23" />
+  </ItemGroup>
+</Project>

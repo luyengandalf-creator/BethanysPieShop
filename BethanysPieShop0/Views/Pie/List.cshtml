@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Pie>
+<h1 class="mt-5 pt-4">pies</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var pie in Model)
+            {
+                <div class="col">
+                    <div class="card pie-card h-100 position-relative">
+                        @if (!string.IsNullOrWhiteSpace(pie.ImageThumbnailUrl))
+                        {
+                                    <a href="/Pie/Details/@pie.PieId" title="@pie.Name">
+                                        <img src="@pie.ImageThumbnailUrl"
+                                        class="card-img-top"
+                                        alt="@pie.Name"
+                                        loading="lazy"
+                                        decoding="async">
+                                    </a>
+                        }
+                        else
+                        {
+                            <a href="/Pie/Details/@pie.PieId" title="@pie.Name"
+                            class="d-flex align-items-center justify-content-center bg-light"
+                            style="height:200px;">
+                                <span class="text-muted">No image</span>
+                            </a>
+                        }
+                        <div class="card-body pie-button d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mt-2">
+                                <h2 class="hS text-start mb-0">
+                                    <a href="/Pie/Details/@pie.PieId" class="pie-link
+                                        stretched-link">@pie.Name</a>
+                                </h2>
+                                <h5 class="text-nowrap mb-0">@pie.Price.ToString("C")</h5>
+                            </div>
+                            @if (!string.IsNullOrWhiteSpace(pie.ShortDescription))
+                            {
+                                <p class="text-muted mt-2 mb-0">@pie.ShortDescription</p>
+                            } 
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
