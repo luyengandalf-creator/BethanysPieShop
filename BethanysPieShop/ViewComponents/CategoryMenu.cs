@@ -1,7 +1,7 @@
 ﻿using BethanysPieShop.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BethanysPieShop.Components
+namespace BethanysPieShop.ViewComponents
 {
     public class CategoryMenu : ViewComponent
     {

@@ -22,6 +22,7 @@
     <Content Remove="Views\Pie\Details - Copy.cshtml" />
     <Content Remove="Views\Pie\List %280%29.cshtml" />
     <Content Remove="Views\Pie\_Layout.cshtml" />
+    <Content Remove="wwwroot\Images\chocolatecheesecake.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TagHelpers\" />
